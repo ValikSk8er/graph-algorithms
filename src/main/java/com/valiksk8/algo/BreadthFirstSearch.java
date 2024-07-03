@@ -17,7 +17,7 @@ public class BreadthFirstSearch {
             //action
             System.out.println("Actual visited vertex: " + actualVertex);
 
-            for (Vertex v : actualVertex.getAdjacencyList()) {
+            for (Vertex v : actualVertex.getNeighbors()) {
                 if (!v.isVisited()) {
                     v.setVisited(true);
                     vertexQueue.add(v);
@@ -27,42 +27,7 @@ public class BreadthFirstSearch {
     }
 
     public static void main(String[] args) {
-        Vertex root = createGraph();
-
-        BreadthFirstSearch.traverse(root);
-    }
-
-    private static Vertex createGraph() {
-        Vertex a = new Vertex("A");
-        Vertex b = new Vertex("B");
-        Vertex c = new Vertex("C");
-        Vertex d = new Vertex("D");
-        Vertex e = new Vertex("E");
-        Vertex f = new Vertex("F");
-        Vertex g = new Vertex("G");
-        Vertex h = new Vertex("H");
-
-        a.addNaighbor(b);
-        a.addNaighbor(g);
-        a.addNaighbor(f);
-
-        b.addNaighbor(a);
-        b.addNaighbor(c);
-        b.addNaighbor(d);
-
-        c.addNaighbor(b);
-
-        d.addNaighbor(b);
-        d.addNaighbor(e);
-
-        f.addNaighbor(a);
-
-        g.addNaighbor(a);
-        g.addNaighbor(h);
-
-        h.addNaighbor(g);
-
-        return a;
+        BreadthFirstSearch.traverse(Graph.create());
     }
 }
 

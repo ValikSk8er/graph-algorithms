@@ -7,11 +7,11 @@ public class Vertex {
 
     private String name;
     private boolean visited;
-    private List<Vertex> adjancencyList;
+    private List<Vertex> neighbors;
 
     public Vertex(String name) {
         this.name = name;
-        this.adjancencyList = new LinkedList<>();
+        this.neighbors = new LinkedList<>();
     }
 
     public boolean isVisited() {
@@ -22,12 +22,12 @@ public class Vertex {
         this.visited = visited;
     }
 
-    public List<Vertex> getAdjacencyList() {
-        return adjancencyList;
+    public List<Vertex> getNeighbors() {
+        return neighbors;
     }
 
-    public void addNaighbor(Vertex vertex) {
-        this.adjancencyList.add(vertex);
+    public void addNeighbor(Vertex vertex) {
+        this.neighbors.add(vertex);
     }
 
     @Override
